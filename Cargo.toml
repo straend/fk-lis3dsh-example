@@ -1,0 +1,27 @@
+[package]
+name = "fk-lis3dsh-example"
+version = "0.1.0"
+authors = ["Tomas Strand <tomas@fik1.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.dev]
+debug = 1 # default is `true`; not needed if not already overridden
+
+[profile.release]
+debug = 1 # default is `false`; using `true` is also OK
+
+[dependencies]
+stm32f407g-disc = "0.4.0"
+cortex-m = "0.6"
+cortex-m-rt = "0.6"
+embedded-hal = "0.2.4"
+accelerometer = "~0.12"
+rtt-target = { version = "0.2.2", features = ["cortex-m"] }
+
+# Panic behaviour, see https://crates.io/keywords/panic-impl for alternatives
+panic-halt = "0.2"
+
+[dependencies.fk-lis3dsh]
+version = "0.1.0"
